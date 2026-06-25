@@ -32,12 +32,8 @@ export function Home() {
   }, [])
 
   const categoryImages: Record<string, string> = {
-    'mango-pickles': 'https://images.pexels.com/photos/4110541/pexels-photo-4110541.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'gongura-pickles': 'https://images.pexels.com/photos/2286776/pexels-photo-2286776.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'lemon-pickles': 'https://images.pexels.com/photos/4033313/pexels-photo-4033313.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'garlic-pickles': 'https://images.pexels.com/photos/4110541/pexels-photo-4110541.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'murukulu': 'https://images.pexels.com/photos/6066050/pexels-photo-6066050.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'chekkalu': 'https://images.pexels.com/photos/6066050/pexels-photo-6066050.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'veg-pickles': 'https://images.pexels.com/photos/4110541/pexels-photo-4110541.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'non-veg-pickles': 'https://images.pexels.com/photos/2286776/pexels-photo-2286776.jpeg?auto=compress&cs=tinysrgb&w=800',
     'traditional-snacks': 'https://images.pexels.com/photos/6066050/pexels-photo-6066050.jpeg?auto=compress&cs=tinysrgb&w=800',
     'combo-packs': 'https://images.pexels.com/photos/2286776/pexels-photo-2286776.jpeg?auto=compress&cs=tinysrgb&w=800',
   }
@@ -108,7 +104,7 @@ export function Home() {
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-charcoal mb-2">Browse Categories</h2>
             <p className="text-gray-500 text-sm">Explore our wide range of authentic Andhra products</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {categories.map((cat) => (
               <Link
                 key={cat.id}
