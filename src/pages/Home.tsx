@@ -104,24 +104,30 @@ export function Home() {
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-charcoal mb-2">Browse Categories</h2>
             <p className="text-gray-500 text-sm">Explore our wide range of authentic Andhra products</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {categories.map((cat) => (
               <Link
                 key={cat.id}
                 to={`/shop?category=${cat.slug}`}
-                className="group text-center"
+                className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-2 border border-gray-100">
+                <div className="aspect-[4/3] bg-gray-100">
                   <img
-                    src={cat.image_url || categoryImages[cat.slug] || 'https://images.pexels.com/photos/4110541/pexels-photo-4110541.jpeg?auto=compress&cs=tinysrgb&w=400'}
+                    src={cat.image_url || categoryImages[cat.slug] || 'https://images.pexels.com/photos/4110541/pexels-photo-4110541.jpeg?auto=compress&cs=tinysrgb&w=800'}
                     alt={cat.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
                 </div>
-                <h3 className="text-xs font-medium text-charcoal group-hover:text-deep-green transition-colors line-clamp-1">
-                  {cat.name}
-                </h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="font-serif text-white font-semibold text-base sm:text-lg leading-tight">
+                    {cat.name}
+                  </h3>
+                  <span className="inline-flex items-center gap-1 text-white/80 text-xs mt-1 group-hover:text-gold transition-colors">
+                    Shop now <ArrowRight size={11} />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
